@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FlashTools</string>
+    <string name="current_test">当前测试项:%s</string>
+    <string name="time">已运行时间:%s</string>
+    <string name="loop_count">循环次数:%s</string>
+    <string name="create_large_file">创建大文件</string>
+    <string name="create_small_file">创建小文件</string>
+    <string name="create_random_file">随机文件创建</string>
+    <string name="random_file_access">文件随机读取</string>
+    <string name="log_path">log存储路径:%s</string>
+    <string name="left_space">可用内存:%s G</string>
+</resources>

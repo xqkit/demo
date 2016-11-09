@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                tools:context="com.example.flushtools.OnlyReadActivity"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/only_write_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/only_write_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="只写测试"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/only_write_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/cpu_freq_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line1">
+
+                <TextView
+                    android:id="@+id/cpu_freq_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CPU负载"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <CheckBox
+                    android:id="@+id/cpu_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line1s"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/cpu_freq_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/set_cpu_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line1s">
+
+                <TextView
+                    android:id="@+id/cpu_freq_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CPU负载数值"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/cpu_freq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cpu_freq_value_tv"
+                    android:text="80"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line2s"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/set_cpu_container"
+                android:background="@color/gray"/>
+
+
+            <RelativeLayout
+                android:id="@+id/loop_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line2s">
+
+                <TextView
+                    android:id="@+id/loop_count_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="循环次数"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/loop_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/loop_count_text"
+                    android:text="10000"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/loop_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/file_size_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line2">
+
+                <TextView
+                    android:id="@+id/file_size_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="文件大小(KB)"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/file_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/file_size_text"
+                    android:text="200"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/file_size_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/package_size_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line6">
+
+                <TextView
+                    android:id="@+id/package_size_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="单次写入包大小(KB)"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/package_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/package_size_text"
+                    android:text="1500"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/package_size_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/check_period_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line3"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/check_period_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="校验周期"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/check_period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/check_period_text"
+                    android:text="10000"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/check_period_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/random_rate_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line4">
+
+                <TextView
+                    android:id="@+id/random_rate_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="随机速率"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <CheckBox
+                    android:id="@+id/random_rate_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/random_rate_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/write_rate_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line5">
+
+                <TextView
+                    android:id="@+id/write_rate_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="写入速率(kb/s)"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/write_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/write_rate_text"
+                    android:text="100"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/divide_line7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/write_rate_container"
+                android:background="@color/gray"/>
+
+            <RelativeLayout
+                android:id="@+id/left_space_container"
+                style="@style/padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divide_line7">
+
+                <TextView
+                    android:id="@+id/left_space_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预留空间(MB)"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/left_space_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/left_space_text"
+                    android:text="100"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
