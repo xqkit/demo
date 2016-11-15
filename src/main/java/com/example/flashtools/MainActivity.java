@@ -12,6 +12,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import operatorthread.CreateFileThread;
@@ -97,6 +98,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     void initView() {
+        //保持屏幕常亮
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         readThread = new OnlyReadThread(handler, params);
         writeThread = new OnlyWriteThread(handler, params);
         createFileThread = new CreateFileThread(handler, params);
