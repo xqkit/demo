@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FlashTools</string>
+    <string name="app_name">FlashTools②</string>
     <string name="current_test">当前测试项:%s</string>
     <string name="time">已运行时间:%s</string>
     <string name="loop_count">循环次数:%s</string>

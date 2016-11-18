@@ -3,11 +3,14 @@ package com.example.flashtools;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
@@ -64,6 +67,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         }
     };
+    private MyBinder mBinder;
+    private ServiceConnection mConn;
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -84,6 +89,25 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (checkSelfPermission(Manifest.permission.RECEIVE_BOOT_COMPLETED) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.RECEIVE_BOOT_COMPLETED}, 4);
         }
+        if (checkSelfPermission(Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.RECEIVE_BOOT_COMPLETED}, 5);
+        }
+        if (checkSelfPermission(Manifest.permission.ACCESS_NOTIFICATION_POLICY) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.RECEIVE_BOOT_COMPLETED}, 5);
+        }
+        mConn = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                mBinder = (MyBinder) service;
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                mBinder = null;
+            }
+        };
+        Intent intent = new Intent(this,MyService.class);
+        bindService(intent,mConn,BIND_AUTO_CREATE);
     }
 
     @Override
@@ -370,6 +394,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unbindService(mConn);
     }
 
 }
